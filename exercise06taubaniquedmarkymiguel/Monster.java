@@ -1,13 +1,13 @@
 package exercise06taubaniquedmarkymiguel;
 import java.util.ArrayList;
 
-public class Monster{
+public class Monster {
     //changed all private access modifiers to protected
     protected final String name, type, strongAgainst, weakAgainst;
     protected double maxHP, hp, atk, def, xp, lvl;  //changed numerical int values to double
     protected static ArrayList<Monster> monsterList = new ArrayList<>();
 
-    public Monster(String n, String t, String s, String w, double m, double base){
+    public Monster(String n, String t, String s, String w, double m, double base) {
         name = n;
         type = t;
         strongAgainst = s;
@@ -39,7 +39,7 @@ public class Monster{
     }
 
     public void attack(Monster m){
-        double damage = ((atk*atk)/(atk+m.getDef()));   // damage is now calculated and cast as double
+        double damage = (int) ((atk*atk)/(double)(atk+m.getDef()));    // damage is calculated as  double, then cast as int
         boolean strong = false, weak = false;
         if(strongAgainst.equals(m.type)){
             damage *= 2;
@@ -53,8 +53,8 @@ public class Monster{
         if(m.hp < 0) m.hp = 0;
             System.out.println(name  + " attacked " + m.getName() +
             " and dealt " + damage + " damage, reducing it to " + m.getHP() + "HP.");
-        if(strong) System.out.println("It was super effective!");
-        if(weak) System.out.println("It wasn't very effective...");
+        if(strong) System.out.println("It was super effective!\n");
+        if(weak) System.out.println("It wasn't very effective...\n");
 
         if(m.hp <= 0){
             m.hp = 0;

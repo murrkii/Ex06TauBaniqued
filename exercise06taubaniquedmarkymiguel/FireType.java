@@ -1,8 +1,8 @@
 package exercise06taubaniquedmarkymiguel;
 
-public class FireType extends Monster{
+public class FireType extends Monster {
     
-    public FireType (String n, double m, double base){
+    public FireType (String n, double m, double base) {
         super(n, "fire", "grass", "water", m, base);
         atk = base*1.3;
         def = base*0.7;

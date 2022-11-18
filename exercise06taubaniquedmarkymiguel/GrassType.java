@@ -1,8 +1,8 @@
 package exercise06taubaniquedmarkymiguel;
 
-public class GrassType extends Monster{
+public class GrassType extends Monster {
    
-    public GrassType (String n, double m, double base){
+    public GrassType (String n, double m, double base) {
         super(n, "grass", "water", "fire", m, base);
     }
 
